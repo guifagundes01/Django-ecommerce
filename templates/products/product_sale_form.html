@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div>
+  <div>
+    <h2>Formulário de Compra</h2>
+    <h3>{{ product.name }}</h3>
+    <form method="post" action="{% url 'products:sale:sale_order' slug=product.slug %}">{% csrf_token %}
+      {{form.as_p}}
+      <input type="submit" value="Finalizar Compra">
+    </form>
+  </div>
+
+
+  
+</div>
+
+{% endblock content %}

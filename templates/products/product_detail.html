@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}{{ product.name }}{% endblock title %}
+
+{% block content %}
+
+<div>
+  <div>
+    <a href="/products/{{object.name}}/sale">
+      {% if product.img %}
+      <img src="/media/media/images/{{product.name}}.jpeg" alt="">
+      {% else %}
+      
+      {% endif %}
+    </a>
+  </div>
+  <div>
+    <h2>{{product.name}}</h2>
+    <h3>R$ {{product.price}}</h3>
+  </div>
+  <div>
+    <a href="/products/{{object.name}}/sale">Comprar</a>
+  </div>
+
+</div>
+
+{% endblock content %}

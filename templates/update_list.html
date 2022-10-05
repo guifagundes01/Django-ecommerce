@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+Atualizar Produtos
+{% endblock title %}
+
+{% block content %}
+
+<div>
+  <div>
+    <h2>Produtos</h2>
+  </div>
+  <div>
+    {% for product in product_list %}
+    <div class="card">
+      <div>
+        <a href="/products/{{product.name}}/update">
+          <img src="/media/media/images/{{product.name}}.jpeg" alt="">
+        </a>
+      </div>
+      <div>
+        <a href="/products/{{product.name}}/update">
+          <h4>{{ product.name }}</h4>
+        </a>
+        <a href="/products/{{product.name}}/update">
+          <h4>R$ {{ product.price }}</h4>
+        </a>
+      </div>
+    </div>
+    
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div>
+  
+  <h2>Compra Finalizada</h2>
+
+  <div>
+    {% if product.img %}
+    <img src="/media/media/images/{{product.name}}.jpeg" alt="">
+    {% else %}
+    
+    {% endif %}
+  </div>
+
+
+  <h2>{{product.name}} ({{sale.quantity}} unidade(s))</h2>
+
+  <div>
+    <h3>Valor Total: R$ {{sale.total_value}}</h3>
+  </div>
+  
+
+
+  
+</div>
+
+{% endblock content %}

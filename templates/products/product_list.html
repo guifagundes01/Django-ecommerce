@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+Produtos
+{% endblock title %}
+
+{% block content %}
+
+<div>
+  <div>
+    <h2>Produtos</h2>
+  </div>
+  <div>
+    {% for product in product_list %}
+    <div class="card">
+      <div>
+        <a href="{{ product.get_absolute_url  }}">
+          {% if product.img %}
+          <img src="/media/media/images/{{product.name}}.jpeg" alt="">
+          {% else %}
+          
+          {% endif %}
+        </a>
+      </div>
+      <div>
+        <a href="{{ product.get_absolute_url }}">
+          <h4>{{ product.slug }}</h4>
+        </a>
+        <a href="{{ product.get_absolute_url }}">
+          <h4>R$ {{ product.price }}</h4>
+        </a>
+      </div>
+    </div>
+    
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock content %}
